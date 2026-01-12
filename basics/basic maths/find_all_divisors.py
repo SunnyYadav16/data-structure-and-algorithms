@@ -14,16 +14,32 @@ Input: N = 12
 Output: [1, 2, 3, 4, 6, 12]
 Explanation: The divisors of 12 are 1, 2, 3, 4, 6, 12.
 """
-import math
 
-number = int(input())
-divisor_list = []
+# BRUTE FORCE - O(N)
+def find_divisor(num):
+    div_list = []
+    for i in range(1, num+1):
+        if num % i == 0:
+            div_list.append(i)
 
-for i in range(1, int(math.sqrt(number)) + 1):
-    if number % i == 0:
-        divisor_list.append(i)
-        if number/i != i:
-            divisor_list.append(int(number/i))
+    return div_list
 
-divisor_list.sort()
-print(divisor_list)
+
+# OPTIMAL APPROACH - O(sqrt(N) + O(log k * k)
+def find_divisor_optimal(num):
+    divisor_list = []
+
+    for i in range(1, int(num ** 0.5) + 1):
+        if number % i == 0:
+            divisor_list.append(i)
+            if number // i != i:
+                divisor_list.append(int(number // i))
+
+    divisor_list.sort()
+    return divisor_list
+
+
+if __name__ == "__main__":
+    number = int(input())
+    print(find_divisor(number))
+    print(find_divisor_optimal(number))

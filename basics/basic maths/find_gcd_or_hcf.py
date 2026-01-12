@@ -28,8 +28,8 @@ for i in range(min(n1, n2), 0, -1):
         break
 
 
-# OPTIMAL APPROACH (Eucledian Algorithm)
-
+# OPTIMAL APPROACH (Euclidean Algorithm)
+# O(log(min(n1,n2)))
 n1 = int(input())
 n2 = int(input())
 

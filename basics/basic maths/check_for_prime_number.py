@@ -16,22 +16,18 @@ Examples
 """
 import math
 
-def check_prime(number):
-    count = 0
+def check_prime(num):
+    if num < 2:
+        return False
+    sqrt_num = int(math.sqrt(num))
 
-    if number == 1 or number == 2:
-        return True
+    for i in range(2, sqrt_num + 1):
+        if num % i == 0:
+            return False
 
-    for i in range(3, int(math.sqrt(number)) + 1):
-        if number % i == 0:
-            count += 1
-            if number / i != i:
-                count += 1
+    return True
 
-    if count == 2:
-        return True
-    return False
-
-number = int(input())
-print(check_prime(number))
+if __name__ == "__main__":
+    number = int(input())
+    print(check_prime(number))
 

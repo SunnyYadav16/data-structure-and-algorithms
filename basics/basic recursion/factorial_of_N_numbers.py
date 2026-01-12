@@ -1,5 +1,5 @@
 """
-Problem Statement: Given a number X,  print its factorial.
+Problem Statement: Given a number X, print its factorial.
 
 To obtain the factorial of a number, it has to be multiplied by all the whole numbers preceding it.
 More precisely X! = X*(X-1)*(X-2) … 1.
@@ -18,6 +18,17 @@ Output: 6
 Explanation: 3!=3*2*1
 """
 
+def loop_func(n):
+    if n == 0 or n == 1:
+        return 1
+
+    fact = 1
+    for i in range(1, n+1):
+        fact *= i
+
+    return fact
+
+
 def recursive_func(n):
     if n == 0 or n == 1:
         return 1
@@ -26,5 +37,7 @@ def recursive_func(n):
 
 if __name__ == "__main__":
     n = 4
-    answer = recursive_func(n)
-    print(answer)
+    loop_answer = loop_func(n)
+    print(loop_answer)
+    rec_answer = recursive_func(n)
+    print(rec_answer)
