@@ -5,13 +5,13 @@ If there are multiple elements that appear second most frequent times, find the 
 If second most frequent element does not exist return -1.
 
 Example 1
-Input: arr = [1, 2, 2, 3, 3, 3]
+Input: input_str = [1, 2, 2, 3, 3, 3]
 Output: 2
 Explanation:
 The number 2 appears the second most (2 times) and number 3 appears the most(3 times).
 
 Example 2
-Input: arr = [4, 4, 5, 5, 6, 7]
+Input: input_str = [4, 4, 5, 5, 6, 7]
 Output: 6
 Explanation:
 Both 6 and 7 appear second most times, but 6 is smaller.
