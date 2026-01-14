@@ -19,7 +19,7 @@ from collections import Counter
 
 def find_highest_occurring_element(arr, n):
     hash_map = Counter(arr)
-    # for i in arr:
+    # for i in input_str:
     #     if i not in hash_map:
     #         hash_map[i] = 1
     #     else:
