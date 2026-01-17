@@ -25,8 +25,8 @@ def parameterized_func(i, sum):
 
 # FUNCTIONAL PATTERN
 def recursive_func(n):
-    if n == 0:
-        return 0
+    if n == 1:
+        return 1
     return n + recursive_func(n-1)
 
 
