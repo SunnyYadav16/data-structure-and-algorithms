@@ -12,6 +12,7 @@ Output : {1,2,4,6,7}
 Explanation : Given array is sorted in non-decreasing order.
 """
 
+# TC -  O(N * log base2 N) (log base 2 is because each time we are dividing the array in half)
 def merge_sort(arr, low, high):
     if low == high: return
 

@@ -12,11 +12,12 @@ Output: 1,2,3,4,5
 Explanation: After sorting the array is: 1, 2, 3, 4, 5
 """
 
-
+# ORDER IS INCREASING
+# TC - O(N^2)
 def selection_sort(arr):
     n = len(arr)
 
-    for i in range(n):
+    for i in range(n-1):
         min_index = i
 
         for j in range(i+1 , n):
@@ -28,6 +29,24 @@ def selection_sort(arr):
     return arr
 
 
+# ORDER IS DECREASING
+# TC - O(N^2)
+def selection_sort_reverse(arr):
+    n = len(arr)
+
+    for i in range(n-1):
+        max_index = i
+
+        for j in range(i+1, n):
+            if arr[max_index] < arr[j]:
+                max_index = j
+
+        arr[i], arr[max_index] = arr[max_index], arr[i]
+
+    return arr
+
+
 if __name__ == "__main__":
     my_arr = [7,2,4,3,1,9,8,5,6,10,0]
     print(selection_sort(my_arr))
+    print(selection_sort_reverse(my_arr))
