@@ -14,6 +14,8 @@ Output: 1,2,3,4,5
 Explanation: After sorting the array is: 1,2,3,4,5
 """
 
+# TC - O(N^2)
+# Best case if array already sorted so while loop is never executed -  O(N)
 def insertion_sort(arr):
     n = len(arr)
 

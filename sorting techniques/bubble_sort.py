@@ -12,21 +12,61 @@ Output: 1,2,3,4,5
 Explanation: After sorting we get 1,2,3,4,5
 """
 
+# LOOPING FROM END OF LIST (MOST EFFICIENT)
+# TC - O(N^2)
 def bubble_sort(arr):
     n = len(arr)
 
-    did_swap = 0
     for i in range(n-1, 0, -1):
+        did_swap = False
         for j in range(0 , i):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
-                did_swap += 1
+                did_swap = True
 
-        if did_swap == 0:
+        if not did_swap:
             break
     return arr
 
 
+# LOOPING FROM START OF LIST
+# TC - O(N^2)
+def bubble_sort_v2(nums):
+    n = len(nums)
+    did_swap = 0
+    for i in range(n-1):
+        for j in range(n-1):
+            if nums[j] > nums[j+1]:
+                nums[j], nums[j+1] = nums[j+1], nums[j]
+                did_swap +=1
+
+        if did_swap == 0:
+            break
+
+    return nums
+
+
+# USING WHILE LOOP
+# TC - O(N^2)
+def bubble_sort_v3(nums):
+    n = len(nums)
+    is_sorted = False
+
+    while not is_sorted:
+        is_sorted = True
+
+        for i in range(n-1):
+            if nums[i] > nums[i+1]:
+                is_sorted = False
+                nums[i], nums[i+1] = nums[i+1], nums[i]
+
+        if is_sorted:
+            break
+
+    return nums
+
 if __name__ == "__main__":
-    my_arr = [7,2,4,3,1,9,8,5,6,10,0]
+    my_arr = [-44,48,-40,-38,-29,-5,-2,-7,-42,-16,-7,-40,14,-22,7]
     print(bubble_sort(my_arr))
+    print(bubble_sort_v2(my_arr))
+    print(bubble_sort_v3(my_arr))
