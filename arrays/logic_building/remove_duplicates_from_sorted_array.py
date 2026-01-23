@@ -26,7 +26,17 @@ There are 4 distinct elements in nums and the elements marked as _ can have any 
 """
 
 def remove_duplicates(nums):
-    ...
+    n = len(nums)
+    i, j = 0, 1
+
+    while j < n:
+        if nums[i] != nums[j]:
+            i += 1
+            nums[i], nums[j] = nums[j], nums[i]
+
+        j += 1
+    return i + 1
+
 
 if __name__ == "__main__":
     input_arr =  [-2, 2, 4, 4, 4, 4, 5, 5]
